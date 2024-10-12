@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>Student Registration Form</title>
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(120deg, #9be5f3, #c49ef5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.container {
+    width: 430px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 580px;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4A4A4A;
+    font-size: 1.5em;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.signup-form input[type="submit"] {
+    background-color: #66b3ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.4s ease;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: #8cc2f7;
+}
+
+.signup-form .login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-form .login-link a:hover {
+    text-decoration: underline;
+}
+</style>
+<body>
+
+    <div class="container">
+        <form class="signup-form" action="submit.php" method="POST">
+            <h2>Sign Up for Registration</h2>
+
+            <!-- First Name -->
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required minlength="2" pattern="[A-Za-z]+" title="Only alphabets allowed">
+
+            <!-- Last Name -->
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required minlength="2" pattern="[A-Za-z]+" title="Only alphabets allowed">
+
+            <!-- Middle Name -->
+            <label for="middle-name">Middle Name</label>
+            <input type="text" id="middle-name" name="middle-name" pattern="[A-Za-z]*" title="Only alphabets allowed">
+
+            <!-- Registration Number -->
+            <label for="reg-number">Registration Number</label>
+            <input type="text" id="reg-number" name="reg-number" required pattern="[0-9]{11}" title="11 numeric characters required">
+
+            <!-- Department -->
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" required pattern="[A-Za-z\s]+" title="Only alphabets and spaces allowed">
+
+            <!-- Course Code -->
+            <label for="course-code">Course Code</label>
+            <input type="text" id="course-code" name="course-code" required pattern="[A-Za-z0-9]{3,6}" title="3-6 alphanumeric characters required">
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Faculty -->
+            <label for="faculty">Faculty</label>
+            <input type="text" id="faculty" name="faculty" required pattern="[A-Za-z\s]+" title="Only alphabets and spaces allowed">
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Gender -->
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{11,13}" title="11-13 digits required">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Sign Up">
+
+        </form>
+    </div>
+
+</body>
+</html>
