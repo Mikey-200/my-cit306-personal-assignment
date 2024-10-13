@@ -16,13 +16,12 @@ $department = mysqli_real_escape_string($conn, $_POST['department']);
 $courseCode = mysqli_real_escape_string($conn, $_POST['course-code']);
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $faculty = mysqli_real_escape_string($conn, $_POST['faculty']);
-$dob = mysqli_real_escape_string($conn, $_POST['dob']);
 $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 
 // Prepare SQL query
-$sql = "INSERT INTO registrations (first_name, last_name, middle_name, reg_number, department, course_code, email, faculty, dob, gender, phone) 
-        VALUES ('$firstName', '$lastName', '$middleName', '$regNumber', '$department', '$courseCode', '$email', '$faculty', '$dob', '$gender', '$phone')";
+$sql = "INSERT INTO registrations (first_name, last_name, middle_name, reg_number, department, course_code, email, faculty, gender, phone) 
+        VALUES ('$firstName', '$lastName', '$middleName', '$regNumber', '$department', '$courseCode', '$email', '$faculty', '$gender', '$phone')";
 
 // Execute the query
 if (mysqli_query($conn, $sql)) {
@@ -43,7 +42,6 @@ mysqli_close($conn);
     $data .= "Course Code: $courseCode\n";
     $data .= "Email: $email\n";
     $data .= "Faculty: $faculty\n";
-    $data .= "Date of Birth: $dob\n";
     $data .= "Gender: $gender\n";
     $data .= "Phone Number: $phone\n";
 
